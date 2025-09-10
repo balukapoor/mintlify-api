@@ -52,7 +52,7 @@ function hasCompletionMarker(content) {
 // ─────────────────────────────────────────────────────
 //   AUTOMATIC CONTINUATION CONFIGURATION
 // ─────────────────────────────────────────────────────
-const MAX_CONTINUATIONS = 15; // Maximum number of continuation requests
+const MAX_CONTINUATIONS = process.env.NODE_ENV === 'production' ? 3 : 15; // Maximum number of continuation requests
 const CONTINUATION_DELAY = 2000; // Delay between continuation requests (ms)
 
 // ─────────────────────────────────────────────────────
